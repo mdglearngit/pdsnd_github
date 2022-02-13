@@ -9,7 +9,9 @@ Bikeshare Usage
 ### Description
 The Bikeshare Usage project enables users to see statistics about who is using the bikes available in Chicago, New York City, and Washington D.C., as well as, how the riders are using the bikeshare service, e.g. most popular routes.
 
-The program asks the user to input the city, month and day of week the user is interested in. After the general statistics are provided, the user can also ask to view the raw data. 
+The program asks the user to input the city, month and day of week the user is interested in. After the general statistics are provided, the user can also ask to view the raw data.
+
+[Adding more content here because I just noticed the section that said I needed at least 3 commits for the readme file. This is number 2.]
 
 ### Files used
 Main program file: bikeshare.py
