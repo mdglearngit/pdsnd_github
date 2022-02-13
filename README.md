@@ -4,7 +4,7 @@
 Project created 2/2/22. (Really it was. Ok, was submitted that day.)
 
 ### Project Title
-Bikeshare Usage
+Bikeshare Usage - Chicago, NYC, DC
 
 ### Description
 The Bikeshare Usage project enables users to see statistics about who is using the bikes available in Chicago, New York City, and Washington D.C., as well as, how the riders are using the bikeshare service, e.g. most popular routes.
@@ -38,4 +38,4 @@ https://towardsdatascience.com/8-ways-to-filter-pandas-dataframes-d34ba585c1b8
 https://www.machinelearningplus.com/pandas/pandas-iloc-how-to-select-rows-using-index-in-dataframes/
 https://stackoverflow.com/questions/5164642/python-print-a-generator-expression
 
-And one more change for good measure so that I have 3 commits related to a single push. 
+And one more change for good measure so that I have 3 commits related to a single push.
