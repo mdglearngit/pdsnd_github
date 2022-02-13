@@ -57,7 +57,7 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         try:
-            city_input = input("Input the name of the city you would like to analyze. Valid selections are chicago, new york city, or washington: ")
+            city_input = input("Input the name of the city you would like to analyze. Valid selections are Chicago, New York City, or Washington: ")
             """Converts input to lower case to enable case insensitive data entry."""
             if str(city_input.lower()) in CITY_DATA.keys():
                 """Prints selection to user to provide immediate feedback to user."""
