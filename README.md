@@ -18,6 +18,8 @@ Main program file: bikeshare.py
 Data files: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
+I'd like to give credit to the Udacity graders. i.e. YOU, reading this right now. Thank you for the work you do in helping those of us taking the classes to learn skills that we need to stay competitive in the job market. I am taking the class to make a career shift and your efforts are helping me do that. I hope you have a wonderful day.
+
 Below, please find the webpages I read when completing project to help me troubleshoot my code or get ideas on how to approach a requirement.
 https://docs.python.org/3.6/library/index.html
 https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html#top-level-dealing-with-datetimelike
