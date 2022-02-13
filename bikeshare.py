@@ -2,23 +2,6 @@ import time
 import pandas as pd
 import numpy as np
 
-""" webpages I read when completing project to help me troubleshoot my code or get ideas on how to approach a requirement. """
-""" https://docs.python.org/3.6/library/index.html """
-""" https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html#top-level-dealing-with-datetimelike """
-""" https://www.python.org/dev/peps/pep-0257/ """
-""" https://blog.finxter.com/how-to-filter-a-dictionary-in-python/ """
-""" https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.dayofweek.html """
-""" https://www.geeksforgeeks.org/how-to-filter-dataframe-rows-based-on-the-date-in-pandas/ """
-""" https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/ """
-""" https://datatofish.com/if-condition-in-pandas-dataframe/ """
-""" https://www.geeksforgeeks.org/convert-floats-to-integers-in-a-pandas-dataframe/ """
-""" https://www.datasciencemadesimple.com/join-or-concatenate-string-python-dataframe/ """
-""" https://www.dataquest.io/blog/tutorial-add-column-pandas-dataframe-based-on-if-else-condition/ """
-""" https://stackoverflow.com/questions/52457656/using-conditional-if-else-logic-with-pandas-dataframe-columns """
-""" https://www.geeksforgeeks.org/ways-to-apply-an-if-condition-in-pandas-dataframe-2/ """
-""" https://towardsdatascience.com/8-ways-to-filter-pandas-dataframes-d34ba585c1b8"""
-""" https://www.machinelearningplus.com/pandas/pandas-iloc-how-to-select-rows-using-index-in-dataframes/ """
-""" https://stackoverflow.com/questions/5164642/python-print-a-generator-expression """
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -29,20 +12,20 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 MONTH_DATA = { 'january': [1],
               'february': [2],
               'march': [3],
-              'april': [4], 
-              'may': [5], 
-              'june': [6], 
-              'all': [1, 2, 3, 4, 5, 6]}  
+              'april': [4],
+              'may': [5],
+              'june': [6],
+              'all': [1, 2, 3, 4, 5, 6]}
 
 """ Creates dictionary to map day of week entered to a numeric value to facilitate data filtering."""
 DAY_DATA = {  'monday': [0],
               'tuesday': [1],
-              'wednesday': [2], 
-              'thursday': [3], 
-              'friday': [4], 
+              'wednesday': [2],
+              'thursday': [3],
+              'friday': [4],
               'saturday': [5],
               'sunday': [6],
-              'all': [0,1, 2, 3, 4, 5 ,6]} 
+              'all': [0,1, 2, 3, 4, 5 ,6]}
 
 def get_filters():
     """
@@ -57,20 +40,20 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         try:
-            city_input = input("Input the name of the city you would like to analyze. Valid selections are chicago, new york city, or washington: ")
+            city_input = input("Input the name of the city you would like to analyze. Valid selections are Chicago, New York City, or Washington: ")
             """Converts input to lower case to enable case insensitive data entry."""
-            if str(city_input.lower()) in CITY_DATA.keys(): 
+            if str(city_input.lower()) in CITY_DATA.keys():
                 """Prints selection to user to provide immediate feedback to user."""
                 print("You selected " + city_input.lower())
-                break   
-            else: 
+                break
+            else:
                 """ Provides instructions to user should input be invalid."""
                 print("I'm sorry, we don't have data for that city. Please enter either chicago, new york city, or washington.")
-                   
+
         except ValueError:
             """ Provides instructions to user should input be invalid."""
             print("That is not a valid value. Please enter either chicago, new york city, or washington.")
-                  
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
     """Defines variable month using month_data dictionary."""
@@ -78,14 +61,14 @@ def get_filters():
         try:
             month = input("Input the full name of the month you would like to analyze. If you would like to see every month, input 'all'. ")
             """Converts input to lower case to enable case insensitive data entry."""
-            if str(month.lower()) in MONTH_DATA.keys(): 
+            if str(month.lower()) in MONTH_DATA.keys():
                 """Prints selection to user to provide immediate feedback to user."""
                 print("You selected " + month)
-                break   
-            else: 
+                break
+            else:
                 """ Provides instructions to user should input be invalid."""
                 print("I'm sorry, we don't have data for that month. Please enter january, february, march, april, may, june or all.")
-                   
+
         except ValueError:
             """ Provides instructions to user should input be invalid."""
             print("That is not a valid value. Please enter january, february, march, april, may, june, or all.")
@@ -93,19 +76,19 @@ def get_filters():
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     """Defines variable day using day_data dictionary."""
-    
+
     while True:
         try:
             day = input("Input the full name of the day of week you would like to analyze. If you would like to see every day, input 'all'. ")
             """Converts input to lower case to enable case insensitive data entry."""
-            if str(day.lower()) in DAY_DATA.keys(): 
+            if str(day.lower()) in DAY_DATA.keys():
                 """Prints selection to user to provide immediate feedback to user."""
                 print("You selected " + day)
-                break   
-            else: 
+                break
+            else:
                   """ Provides instructions to user should input be invalid."""
                   print("I'm sorry, we don't have data for that day. Please enter sunday, monday, tuesday, wednesday, thursday, friday, saturday, or all.")
-                   
+
         except ValueError:
               """ Provides instructions to user should input be invalid."""
               print("That is not a valid value. Please enter sunday, monday, tuesday, wednesday, thursday, friday, saturday, or all.")
@@ -116,7 +99,7 @@ def get_filters():
     city = city_input.lower()
     month = month.lower()
     day = day.lower()
-    
+
     """Include print line to test code"""
     #print(city, month, day)
     print('-'*40)
@@ -143,23 +126,23 @@ def load_data(city, month, day):
     #print(MONTH_DATA.get(month))
     #print(DAY_DATA.keys())
     #print(DAY_DATA.get(day))
-    
+
     """Uses Pandas dataframes to import the csv file based on user input to calculate the desired statistics."""
     read_city = pd.read_csv(CITY_DATA.get(city))
-    
+
     """Creates dataframe."""
     df = pd.DataFrame(read_city)
     #print(df.head())
-    
+
     """Creates new dataframe that filters the original dataframe on the values input by the user."""
-    filtered_df = df[(pd.DatetimeIndex(df['Start Time']).month.isin(MONTH_DATA.get(month))) & (pd.DatetimeIndex(df['Start Time']).dayofweek.isin(DAY_DATA.get(day)))] 
-    
+    filtered_df = df[(pd.DatetimeIndex(df['Start Time']).month.isin(MONTH_DATA.get(month))) & (pd.DatetimeIndex(df['Start Time']).dayofweek.isin(DAY_DATA.get(day)))]
+
     """Adds a city column to dataframe to filter on city to handle that washington does not have gender or birth year columns."""
     filtered_df = filtered_df.assign(City = city)
-   
+
     """Include print line to test code"""
     #print(filtered_df.head())
-  
+
    # Display dataframe
    # df
    # return df
@@ -173,15 +156,15 @@ def time_stats(df):
     start_time = time.time()
 
     # TO DO: display the most common month
-    
+
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     """Extracts month from the Start Time column to create a month column."""
     df['month'] = df['Start Time'].dt.month
     popular_month = df['month'].mode()
     print('Most Frequent Start Month:', popular_month)
-    
-    
+
+
     # TO DO: display the most common day of week
     """Determines day of week from the Start Time column to create a day of week column."""
     df['dayofweek'] = df['Start Time'].dt.dayofweek
@@ -193,7 +176,7 @@ def time_stats(df):
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()
     print('Most Frequent Start Hour:', popular_hour)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -228,7 +211,7 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    
+
     total_travel_time = df['Trip Duration'].sum()
     print('The total travel time in seconds is:', total_travel_time)
 
@@ -252,18 +235,18 @@ def user_stats(df):
     print('The number of users by type is:', user_types)
 
     # TO DO: Display counts of gender
-    """Determines if user input for city is washington to handle differently than chicago or new york city.""" 
-    if df['City'].eq("washington").all(): 
-            print ("We do not have gender data for washington.")        
+    """Determines if user input for city is washington to handle differently than chicago or new york city."""
+    if df['City'].eq("washington").all():
+            print ("We do not have gender data for washington.")
     else:
             """Counts occurences for each value in the column."""
             gender = df['Gender'].value_counts()
             print('The number of users by gender is:', gender)
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    """Determines if user input for city is washington to handle differently than chicago or new your city.""" 
-    if df['City'].eq("washington").all(): 
-            print ("We do not have age data for washington.")        
+    """Determines if user input for city is washington to handle differently than chicago or new your city."""
+    if df['City'].eq("washington").all():
+            print ("We do not have age data for washington.")
     else:
             """Converts Birth Year to integer when completing calculation."""
             oldest_user = df['Birth Year'].min().astype(int)
@@ -275,7 +258,7 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
     #print('Would you')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
@@ -285,7 +268,7 @@ def user_stats(df):
             """Converts input to lower case to enable case insensitive data entry."""
             """Iterates through file as long as row number (index) is smaller than total number of rows in file and prints 5 rows at a time."""
             #print(raw_data_request)
-            
+            pd.set_option('display.max_columns',200)
             if raw_data_request.lower() == 'yes':
                 """ Create iterator to go to through dataframe"""
                 def track_row(x):
@@ -294,7 +277,7 @@ def user_stats(df):
                         yield i
                         i += 5
                 """Define action when iterator is called, in this case, printing of data and asking user if they want to see more data."""
-                for row_num in track_row(len(df)): 
+                for row_num in track_row(len(df)):
                     print(df.iloc[row_num:(row_num+5)])
                     more_raw_data = input('\nWould you like to see 5 more rows? Enter yes or no.\n')
                     if more_raw_data.lower() =='yes':
@@ -304,23 +287,23 @@ def user_stats(df):
                             #print(show_more_values)
                     elif more_raw_data.lower() == 'no':
                         print("Thank you for using bikeshare.")
-                        return                                   
-                    else: 
+                        return
+                    else:
                         """ Provides instructions to user should input be invalid."""
                         print("I'm sorry, that is an invalid. Please try again.")
                         return
-       
+
             elif raw_data_request.lower() == 'no':
                 print("Thank you for using bikeshare.")
                 break
-            else: 
+            else:
                 """ Provides instructions to user should input be invalid."""
                 print("I'm sorry, that is an invalid. Please enter either yes or no.")
-                   
+
         except ValueError:
             """ Provides instructions to user should input be invalid."""
             print("That is not a valid value. Please enter either yes or no.")
-                  
+
 
 def main():
     while True:
